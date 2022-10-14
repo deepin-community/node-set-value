@@ -1,0 +1,27 @@
+Description: fix for is-plain-object > 5
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: no
+Last-Update: 2021-09-16
+
+--- a/index.js
++++ b/index.js
+@@ -9,7 +9,7 @@
+ 
+ const { deleteProperty } = Reflect;
+ const isPrimitive = require('is-primitive');
+-const isPlainObject = require('is-plain-object');
++const { isPlainObject } = require('is-plain-object');
+ 
+ const isObject = value => {
+   return (typeof value === 'object' && value !== null) || typeof value === 'function';
+--- a/package.json
++++ b/package.json
+@@ -28,7 +28,7 @@
+     "test": "mocha"
+   },
+   "dependencies": {
+-    "is-plain-object": "^2.0.4",
++    "is-plain-object": "^5.0.0",
+     "is-primitive": "^3.0.1"
+   },
+   "devDependencies": {

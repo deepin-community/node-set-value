@@ -1,0 +1,29 @@
+Source: node-set-value
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-is-plain-object (>= 5.0.0~) <!nocheck>
+ , node-is-primitive <!nocheck>
+ , node-split-string <!nocheck>
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-set-value
+Vcs-Git: https://salsa.debian.org/js-team/node-set-value.git
+Homepage: https://github.com/jonschlinkert/set-value
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-set-value
+Architecture: all
+Depends: ${misc:Depends}
+ , node-is-plain-object (>= 5.0.0~)
+ , node-is-primitive
+Provides: ${nodejs:Provides}
+Description: create nested values and any intermediaries using dot notation
+ This library can be used to create nested values and any intermediaries using
+ dot notation (`'a.b.c'`) paths.
+ .
+ Node.js is an event-based server-side JavaScript engine.
